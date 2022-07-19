@@ -1,6 +1,6 @@
 {
-  "name": "text_editor",
-  "productName": "text_editor",
+  "name": "NetVim",
+  "productName": "NetVim",
   "version": "1.0.0",
   "description": "My Electron application description",
   "main": "src/index.js",

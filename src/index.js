@@ -14,11 +14,12 @@ const createWindow = () => {
   mainWindow = new BrowserWindow({
     width: 800,
     height: 600,
+    titleBarStyle: "hiddenInset",
   });
 
   // and load the index.html of the app.
   mainWindow.loadURL(`file://${__dirname}/index.html`);
-
+  
   // Open the DevTools.
   mainWindow.webContents.openDevTools();
 
