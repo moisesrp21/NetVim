@@ -48,6 +48,7 @@
   },
   "dependencies": {
     "electron-compile": "^6.4.4",
+    "electron-reloader": "^1.2.3",
     "electron-squirrel-startup": "^1.0.0"
   },
   "devDependencies": {
