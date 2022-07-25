@@ -50,3 +50,23 @@
 	position: relative;
 	width: 45px;
 }
+/* i  m . p . o . r . t .     d . e */
+/* 0, 7, 14, 22, 29, 36, 43, 51, 58 	 */
+.netvim-cursor {
+	writing-mode: horizontal-tb;
+	text-shadow: none;
+	column-count: initial;
+	text-transform: none;
+	text-decoration: none;
+	width: 7px;
+	height: 18px;
+	background-color: rgba(216, 216, 216, 0.5);
+	cursor: text;
+	resize: none;
+	min-width: 0;
+	min-height: 0;
+	position: relative;
+	outline: none;
+	border: none;
+	overflow: hidden;
+}
