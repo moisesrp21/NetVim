@@ -1,9 +1,9 @@
 * {
-	font-family: monospace;
+	font-family: 'RobotoMono';
 	font-weight: normal;
 	font-size: 12px;
 	font-feature-settings: "liga" 0, "calt" 0;
-	line-height: 18px;;
+	line-height: 18px;
 	letter-spacing: 0px;
 
 	margin: 0px;
@@ -69,4 +69,8 @@
 	outline: none;
 	border: none;
 	overflow: hidden;
+}
+@font-face {
+	font-family: 'RobotoMono';
+	src: url('../font/RobotoMono-VariableFont_wght.ttf');
 }
