@@ -7,21 +7,30 @@
 	letter-spacing: 0px;
 	margin: 0px;
 	padding: 0px;
+	/* height: 100%;
+	width: 100%; */
+
+}
+html, body {
 	height: 100%;
 	width: 100%;
-
 }
 .container {
 	display: flex;
 	flex-direction: column;
+	height: 100%;
+	width: 100%;
 }
 
 .netvim-main-window-container {
+	height: 100%;
+	width: 100%;
 	position: relative;
-	/* background-color: #b1b1b1; */
 	background-color: #606060;
 }
 .netvim-main-window {
+	height: 100%;
+	width: 100%;
 	display: flex;
 	position: absolute;	
 	color: aliceblue;
@@ -38,36 +47,28 @@
 	box-shadow: 3px 0px 10px #504f4f;
 }
 .netvim-editor-window {
+	position: relative;
+	height: 100%;
+	width: 100%;
 	margin: 0px 0px 0px 10px;
 }
-.netvim-view-line {
-	position: absolute;
-	width: auto;
-	cursor: text;
-}
-.netvim-view-number-line {
+.netvim-editor-layer {
 	position: relative;
-	width: 45px;
+	height: 100%;
+	width: 100%;
 }
-/* i  m . p . o . r . t .     d . e */
-/* 0, 7, 14, 22, 29, 36, 43, 51, 58 	 */
+.netvim-editor-window-container {
+	border-spacing: unset;
+}
 .netvim-cursor {
-	writing-mode: horizontal-tb;
 	text-shadow: none;
-	column-count: initial;
-	text-transform: none;
-	text-decoration: none;
-	width: 7px;
+	width: 8px;
 	height: 18px;
 	background-color: rgba(216, 216, 216, 0.5);
-	cursor: text;
-	resize: none;
-	min-width: 0;
-	min-height: 0;
-	position: relative;
+	position: absolute;
 	outline: none;
 	border: none;
-	overflow: hidden;
+	z-index: 2;
 }
 @font-face {
 	font-family: 'RobotoMono';

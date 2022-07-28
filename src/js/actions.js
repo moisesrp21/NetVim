@@ -4,8 +4,8 @@ function cursor_down() {
 		cursor_numb.className = "";
 		cursor_line++;
 		cursor_elem = document.getElementById(cursor_line.toString());
-		cursor_numb = document.getElementById("p"+cursor_line.toString());
 		cursor_elem.className = "cursor_line";
+		cursor_numb = document.getElementById("p"+cursor_line.toString());
 		cursor_numb.className = "cursor_line";
 	}
 }

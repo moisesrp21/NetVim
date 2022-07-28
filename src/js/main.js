@@ -14,7 +14,6 @@ function manageKeys(event) {
 	case "l":
 		if (index_buffer<buffer.length) {
 			index_buffer++;
-			char_width = (buffer[index_buffer]===' ')? 8 : 7;
 			move_cursor_left();
 		}
 		break;		
