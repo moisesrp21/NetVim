@@ -25,5 +25,5 @@ function cursor_up() {
 function move_cursor_left() {
 	let x_string = cursor.style.left.replace('px','');
 	let x = parseInt(x_string, 10);
-	cursor.style.left = `${x+7}px`;
+	cursor.style.left = `${x+char_width}px`;
 }

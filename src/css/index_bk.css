@@ -6,6 +6,7 @@
 	display: flex;
 	flex-direction: column;
 	background-color: #606060;
+	font-variant-numeric: tabular-nums lining-nums;
 }
 
 .title_bar {

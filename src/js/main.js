@@ -12,7 +12,11 @@ function manageKeys(event) {
 		// cursor_up();
 		break;		
 	case "l":
-		move_cursor_left();
+		if (index_buffer<buffer.length) {
+			index_buffer++;
+			char_width = (buffer[index_buffer]===' ')? 8 : 7;
+			move_cursor_left();
+		}
 		break;		
 	}
 }

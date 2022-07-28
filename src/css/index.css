@@ -5,7 +5,6 @@
 	font-feature-settings: "liga" 0, "calt" 0;
 	line-height: 18px;
 	letter-spacing: 0px;
-
 	margin: 0px;
 	padding: 0px;
 	height: 100%;
@@ -72,5 +71,5 @@
 }
 @font-face {
 	font-family: 'RobotoMono';
-	src: url('../font/RobotoMono-VariableFont_wght.ttf');
+	src: url('../font/static/RobotoMono-Regular.ttf');
 }
