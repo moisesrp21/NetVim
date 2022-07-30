@@ -1,3 +1,4 @@
+let Cursor = require('./Cursor.js').Cursor;
 // MODE
 const MODE = {
      NORMAL: Symbol("NORMAL"),
@@ -19,14 +20,12 @@ let buffer = [
 ];
 
 // coordinates on editor
-let cursor_x = 0;
-let cursor_y = 0;
+let cursor_html = document.getElementById("netvim-cursor-id")
+let cursor = new Cursor(cursor_html,0,0);
 
 // character dimensions
 let char_height = 18;
 let char_width = 8;
 
-// elements
-let cursor = document.getElementById("netvim-cursor-id")
 // var cursor_elem = document.getElementById("2");
 // var cursor_numb = document.getElementById("p2");
