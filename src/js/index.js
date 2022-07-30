@@ -1,4 +1,5 @@
-import { app, BrowserWindow } from 'electron';
+import { app, BrowserWindow} from 'electron';
+
 try {
   require('electron-reloader')(module)
 } catch (_) {}
