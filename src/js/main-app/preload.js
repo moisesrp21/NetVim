@@ -1,6 +1,6 @@
-const { contextBridge, ipcRenderer } = require('electron')
-import {receiveFromMain} from './ipc-renderer'
+const { contextBridge, ipcRenderer } = require('electron');
 
-contextBridge.exposeInMainWorld('electronAPI',{
-     openFile: () => ipcRenderer.invoke('dialog:openFile')
+contextBridge.exposeInMainWorld('api',{
+     set_cursor_dmsn: (callback) => ipcRenderer.on('update:cursor-dmsn',callback),
+     move_cursor: (callback) => ipcRenderer.on('cursor:move',callback) 
 })
