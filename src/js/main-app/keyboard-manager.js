@@ -1,31 +1,29 @@
-import { IPC_Main_Manager } from './ipc-main';
-import { mw, cursor } from './start.js';
+import  { normal_handle } from './kb/normal-mode-manager';
+import  { insert_handle } from './kb/insert-mode-manager';
+import  { visual_handle } from './kb/visual-mode-manager';
+import { mw, current_mode, MODE } from './start.js';
 
 export class KeyboardManager {
      constructor(){
-          this.ipc_mm = new IPC_Main_Manager();
-          mw.webContents.on('before-input-event', (event, input)=>{
-               this.handle(event,input);
+          // get keyup and keydown events
+          mw.webContents.on('before-input-event', (event, input) => {
+               this.handle(input);
           });
      }
 
-     handle(event, input) {
+     handle(input) {
           if (input.type === 'keyDown') {
-               switch(input.key) {
-                    case "j":
-                         cursor.move_down();
+               switch(current_mode) {
+                    case MODE.NORMAL:
+                         normal_handle(input);
                          break;
-                    case "k":
-                         cursor.move_up();
+                    case MODE.INSERT:
+                         insert_handle(input);
                          break;
-                    case "l":
-                         cursor.move_right();
+                    case MODE.VISUAL:
+                         visual_handle(input);
                          break;
-                    case "h":
-                         cursor.move_left();
-                         break;
-               }
-               this.ipc_mm.sendMainToRenderer({x: cursor.x, y: cursor.y})
+               } 
           }
      }
 }
