@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 	<head>
-        <meta charset="utf-8">
+        <meta http-equiv="Content-Security-Policy" content="" charset="utf-8">
         <title>NetVim</title>
 		<link rel="stylesheet" href="./css/index.css">
 	</head>
@@ -13,16 +13,13 @@
 						<div style="height: 18px" class="netvim-view-number-line"><p>1</p></div>
 						<div style="height: 18px" class="netvim-view-number-line"><p>2</p></div>
 						<div style="height: 18px" class="netvim-view-number-line"><p>3</p></div>
-						<div style="height: 18px" class="netvim-view-number-line"><p>3</p></div>
 						<div style="height: 18px" class="netvim-view-number-line"><p>4</p></div>
-						<div style="height: 18px" class="netvim-view-number-line"><p>5</p></div>
-						<div style="height: 18px" class="netvim-view-number-line"><p>6</p></div>
 					</div>
 					<div class="netvim-editor-window">
 						<div class="netvim-editor-layer">
 							<table id="netvim-main-editor" class="netvim-editor-window-container">
 								<tr id="0">
-									<td>M</td> <td>o</td> <td>i</td> <td>s</td> <td>e</td> <td>s</td> <td>&nbsp;</td> <td>i</td> <td>s</td> <td>&nbsp;</td> <td>G</td> <td>r</td> <td>e</td> <td>a</td> <td>t</td>
+									<td id="00">M</td> <td>o</td> <td>i</td> <td>s</td> <td>e</td> <td>s</td> <td>&nbsp;</td> <td>i</td> <td>s</td> <td>&nbsp;</td> <td>G</td> <td>r</td> <td>e</td> <td>a</td> <td>t</td>
 								</tr>
 								<tr>
 									<td>M</td> <td>o</td> <td>i</td> <td>s</td> <td>e</td> <td>s</td> <td>&nbsp;</td> <td>i</td> <td>s</td> <td>&nbsp;</td> <td>G</td> <td>r</td> <td>e</td> <td>a</td> <td>t</td>
@@ -41,9 +38,5 @@
 			</div>
 		</div>
 	</body>
-	<script src= "./js/init.js"></script>
-	<script src= "./js/global_variables.js"></script>
-	<script src= "./js/actions.js"></script>
-	<script src= "./js/main.js"></script>
-
+	<script src= "./js/renderer.js"></script>
 	</html>
