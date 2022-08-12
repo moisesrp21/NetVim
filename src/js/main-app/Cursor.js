@@ -41,11 +41,18 @@ export class Cursor {
      }
 
      isInsideEditor(x,y) {
+          // console.log("----------");
+          // console.log(`x = ${x}, y = ${y}`);
+          // console.log(`buffer.num_of_lines-1: ${buffer.num_of_lines-1}`);
+          // console.log(`buffer.num_of_lines-1: ${buffer.getLineLength(buffer.y)-1}`);
           if (
                y<0 || y>(buffer.num_of_lines-1)
-               || x<0 || x>(buffer.getLineLength(buffer.y)-1)
-          )
+               || x<0 || x>(buffer.getLineLength(y)-1)
+          ) {
+               // console.log(false);
                return false;
+          }
+          // console.log(true);
           return true
      }
      updateCursorWidth(mode) {

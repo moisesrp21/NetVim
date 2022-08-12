@@ -18,4 +18,7 @@ export class Buffer {
      getLineLength(line_num) {
           return this.arr[line_num].length;
      }
+     updateBuffer(line_number, new_line) {
+          this.arr[line_number] = Array.from(new_line);
+     }
 }

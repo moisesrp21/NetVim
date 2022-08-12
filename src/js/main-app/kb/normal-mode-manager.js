@@ -1,6 +1,6 @@
 import { cursor, MODE, setCurrentMode } from '../start';
 
-function normal_handle(input) {
+export function normal_handle(input) {
      switch(input.key) {
           case "j":
                cursor.move_down();
@@ -23,5 +23,3 @@ function normal_handle(input) {
                break;
      }
 }
-
-export { normal_handle };
