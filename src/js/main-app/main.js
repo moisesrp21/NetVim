@@ -41,7 +41,7 @@ function createWindow() {
      mw.loadFile('./src/index.html');
 
      // Open the DevTools.
-     mw.webContents.openDevTools();
+     // mw.webContents.openDevTools();
 
      // init global variables used in the application
      init(mw);

@@ -17,3 +17,16 @@ window.api.move_cursor((_event, cursor) => {
 window.api.change_cursor_width((_event, width) => {
      cursor_html.style.width = width+"px";
 });
+
+window.api.insert_text((_event, value) => {
+     let x = value.x;
+     let y = value.y;
+     console.log(`x = ${x}, y = ${y}`);
+     let ele = document.getElementById(y);
+     let newEle = ele.insertCell(x);
+     newEle.innerText = value.key;
+     _event.sender.send('updated:inserted-text',{
+          line_number: y,
+          new_line: ele.innerText.replace(/\t/g,'')
+     });
+});
