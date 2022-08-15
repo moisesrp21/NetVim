@@ -19,14 +19,21 @@ window.api.change_cursor_width((_event, width) => {
 });
 
 window.api.insert_text((_event, value) => {
+     //coordinates
      let x = value.x;
      let y = value.y;
-     console.log(`x = ${x}, y = ${y}`);
+     // new element
      let ele = document.getElementById(y);
      let newEle = ele.insertCell(x);
-     newEle.innerText = value.key;
+     newEle.innerHTML = value.key;
+     // update buffer
+     let new_line = ele.innerText.replace(/\t/g,'');
      _event.sender.send('updated:inserted-text',{
           line_number: y,
-          new_line: ele.innerText.replace(/\t/g,'')
+          new_line: new_line
      });
 });
+
+window.api.delete_character((_event, value) => {
+
+})

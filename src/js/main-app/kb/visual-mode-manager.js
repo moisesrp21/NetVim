@@ -1,10 +1,12 @@
-import { cursor, MODE, setCurrentMode } from '../start';
+import { 
+     cursor, MODE, editor 
+} from '../netvim';
 
 function visual_handle(input) {
      switch(input.key) {
           case "Escape":
-               setCurrentMode(MODE.NORMAL);
-               cursor.updateCursorWidth(MODE.NORMAL);
+               editor.setCurrentMode(MODE.NORMAL);
+               cursor.updateWidth();
                break;
      }
 }

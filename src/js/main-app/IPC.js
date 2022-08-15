@@ -1,7 +1,11 @@
 import { ipcMain } from 'electron';
-import { mw, cursor, buffer } from './start';
+import { 
+     mw, 
+     cursor, 
+     current_pane 
+} from './netvim';
 
-export class IPC_Main_Manager {
+export class IPC {
      constructor() {
           // getting response from renderer process 
           ipcMain.on('updated:cursor-dmsn',(_event, dmsn) => {
@@ -9,7 +13,7 @@ export class IPC_Main_Manager {
                cursor.char_height = dmsn.height;
           });
           ipcMain.on('updated:inserted-text',(_event, data) => {
-               buffer.updateBuffer(data.line_number, data.new_line);
+               current_pane.buffer.updateBuffer(data.line_number, data.new_line);
           });
      }
      send(event,value) {

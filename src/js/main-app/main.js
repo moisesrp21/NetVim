@@ -2,7 +2,7 @@
  * main.js the entry to point of this app which is responsible for: 
  * @version 1.0.0
  */
-import { init } from './start';
+import { init } from './netvim';
 
 const { app, BrowserWindow } = require('electron');
 const path = require('path');

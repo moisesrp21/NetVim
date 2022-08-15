@@ -1,7 +1,7 @@
 import  { normal_handle } from './kb/normal-mode-manager';
 import  { insert_handle } from './kb/insert-mode-manager';
 import  { visual_handle } from './kb/visual-mode-manager';
-import { mw, current_mode, MODE } from './start.js';
+import { mw, MODE, current_mode } from './netvim';
 
 export class KeyboardManager {
      constructor(){

@@ -1,25 +1,32 @@
-import { cursor, MODE, setCurrentMode } from '../start';
+import {
+     cursor,
+     MODE,
+     netvim
+} from '../netvim';
 
 export function normal_handle(input) {
      switch(input.key) {
           case "j":
-               cursor.move_down();
+               cursor.moveDown();
                break;
           case "k":
-               cursor.move_up();
+               cursor.moveUp();
                break;
           case "l":
-               cursor.move_right();
+               cursor.moveRight();
                break;
           case "h":
-               cursor.move_left();
+               cursor.moveLeft();
+               break;
+          case "x":
+               cursor.deleteChar();
                break;
           case "i":
-               setCurrentMode(MODE.INSERT);
-               cursor.updateCursorWidth(MODE.INSERT);
+               netvim.setMode(MODE.INSERT);
+               cursor.updateWidth();
                break;
           case "v":
-               setCurrentMode(MODE.VISUAL);
+               editor.setCurrentMode(MODE.VISUAL);
                break;
      }
 }

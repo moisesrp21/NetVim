@@ -1,10 +1,15 @@
-import { cursor, MODE, setCurrentMode, ipc, buffer } from '../start';
+import { 
+     MODE,
+     cursor,
+     current_pane,
+     netvim
+} from '../netvim'
 
 export function insert_handle(input) {
      switch(input.key) {
           case "Escape":
-               setCurrentMode(MODE.NORMAL);
-               cursor.updateCursorWidth(MODE.NORMAL);
+               netvim.setMode(MODE.NORMAL);
+               cursor.updateWidth(MODE.NORMAL);
                break;
           default:
                insertChar(input);
@@ -13,12 +18,5 @@ export function insert_handle(input) {
 }
 
 function insertChar(input) {
-     console.log(input.key);
-     let value = {
-          x: buffer.x,
-          y: buffer.y,
-          key: input.key
-     }
-     cursor.move_right();
-     ipc.send("text:insert",value);
+     current_pane.insertChar(input.key);
 }
