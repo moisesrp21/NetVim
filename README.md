@@ -1,6 +1,6 @@
 # Tasks:
 
-## Moises -> tix-4: Deleting Text
-
 ## tix-5: Highlight text
-## tix-6: Open, Edit, Save File
+## tix-6: Open a File
+## tix-7: Save to File
+## tix-8: UI: show File Name 
