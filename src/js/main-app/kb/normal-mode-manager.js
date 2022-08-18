@@ -1,7 +1,8 @@
 import {
      cursor,
      MODE,
-     netvim
+     netvim,
+     current_pane
 } from '../netvim';
 
 export function normal_handle(input) {
@@ -19,7 +20,7 @@ export function normal_handle(input) {
                cursor.moveLeft();
                break;
           case "x":
-               cursor.deleteChar();
+               current_pane.deleteChar();
                break;
           case "i":
                netvim.setMode(MODE.INSERT);

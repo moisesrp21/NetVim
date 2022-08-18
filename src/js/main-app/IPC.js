@@ -12,7 +12,10 @@ export class IPC {
                cursor.char_width = dmsn.width;
                cursor.char_height = dmsn.height;
           });
-          ipcMain.on('updated:inserted-text',(_event, data) => {
+          ipcMain.on('buffer:update',(_event, data) => {
+               current_pane.buffer.updateBuffer(data.line_number, data.new_line);
+          });
+          ipcMain.on('updated:deleted-character',(_event, data) => {
                current_pane.buffer.updateBuffer(data.line_number, data.new_line);
           });
      }

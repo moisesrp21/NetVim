@@ -5,5 +5,5 @@ contextBridge.exposeInMainWorld('api',{
      move_cursor: (callback) => ipcRenderer.on('cursor:move',callback),
      change_cursor_width: (callback) => ipcRenderer.on('cursor:change-width',callback),
      insert_text: (callback) => ipcRenderer.on('text:insert',callback),
-     delete_character: (callback) => ipcRenderer.on('text:character',callback) 
+     delete_character: (callback) => ipcRenderer.on('text:delete-character',callback) 
 })

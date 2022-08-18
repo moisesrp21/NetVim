@@ -59,7 +59,4 @@ export class Cursor {
           ipc.send('cursor:change-width',newWidth);
 
      }
-     deleteChar() {
-          
-     }
 }

@@ -13,7 +13,6 @@ export class Pane {
      constructor() {
           this.buffer = new Buffer(0,0);
      }
-
      insertChar(char) {
           char = (char == ' '? '&nbsp' : char)
           ipc.send("text:insert", {
@@ -22,5 +21,8 @@ export class Pane {
                key: char
           });
           cursor.moveRight();
+     }
+     deleteChar() {
+          ipc.send('text:delete-character',{x: this.buffer.x, y: this.buffer.y});          
      }
 }

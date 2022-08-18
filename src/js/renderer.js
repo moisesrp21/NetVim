@@ -1,6 +1,6 @@
 // update width and height of each character
 let cursor_html = document.getElementById("netvim-cursor-id") 
-
+let line;
 window.api.set_cursor_dmsn((event) => {
      const char_ele = document.getElementById('00');
      event.sender.send('updated:cursor-dmsn',{
@@ -23,17 +23,27 @@ window.api.insert_text((_event, value) => {
      let x = value.x;
      let y = value.y;
      // new element
-     let ele = document.getElementById(y);
-     let newEle = ele.insertCell(x);
+     line = document.getElementById(y);
+     let newEle = line.insertCell(x);
      newEle.innerHTML = value.key;
      // update buffer
-     let new_line = ele.innerText.replace(/\t/g,'');
-     _event.sender.send('updated:inserted-text',{
+     let new_line = line.innerText.replace(/\t/g,'');
+     _event.sender.send('buffer:update',{
           line_number: y,
           new_line: new_line
      });
 });
 
 window.api.delete_character((_event, value) => {
-
+     console.log(`x: ${value.x}, y: ${value.y}`);
+     let x = value.x;
+     let y = value.y;
+     line = document.getElementById(y);
+     line.deleteCell(x);
+     // update buffer
+     let new_line = line.innerText.replace(/\t/g,'');
+     _event.sender.send('buffer:update',{
+          line_number: y,
+          new_line: new_line
+     });
 })
