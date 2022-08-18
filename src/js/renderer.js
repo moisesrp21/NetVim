@@ -1,6 +1,6 @@
 // update width and height of each character
 let cursor_html = document.getElementById("netvim-cursor-id") 
-
+let line;
 window.api.set_cursor_dmsn((event) => {
      const char_ele = document.getElementById('00');
      event.sender.send('updated:cursor-dmsn',{
@@ -19,14 +19,31 @@ window.api.change_cursor_width((_event, width) => {
 });
 
 window.api.insert_text((_event, value) => {
+     //coordinates
      let x = value.x;
      let y = value.y;
-     console.log(`x = ${x}, y = ${y}`);
-     let ele = document.getElementById(y);
-     let newEle = ele.insertCell(x);
-     newEle.innerText = value.key;
-     _event.sender.send('updated:inserted-text',{
+     // new element
+     line = document.getElementById(y);
+     let newEle = line.insertCell(x);
+     newEle.innerHTML = value.key;
+     // update buffer
+     let new_line = line.innerText.replace(/\t/g,'');
+     _event.sender.send('buffer:update',{
           line_number: y,
-          new_line: ele.innerText.replace(/\t/g,'')
+          new_line: new_line
      });
 });
+
+window.api.delete_character((_event, value) => {
+     console.log(`x: ${value.x}, y: ${value.y}`);
+     let x = value.x;
+     let y = value.y;
+     line = document.getElementById(y);
+     line.deleteCell(x);
+     // update buffer
+     let new_line = line.innerText.replace(/\t/g,'');
+     _event.sender.send('buffer:update',{
+          line_number: y,
+          new_line: new_line
+     });
+})
